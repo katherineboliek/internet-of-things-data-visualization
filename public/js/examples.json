@@ -1,0 +1,30 @@
+[
+  {"name": "Smart Home",
+	"situation": "You want to make sure that when you get home, your dinner will be heated up in time for when you get home.",
+	"parts": [
+    {"title": "Homeowner",
+    "description": "You work from 9-5 and need your food to be ready when you get home."},
+    {"title": "Phone",
+    "description":"Your GPS on your cellphone can communicate how far away from home you are, interacting with data from map services, taking into account traffic."},
+    {"title": "Wifi",
+    "description":"Receives information from your phone that you are 30 minutes away, tells the oven to turn on."},
+    {"title": "Household appliance",
+    "description":"Programmed to cook this dish for 30 minutes, cooks it and then turns off."}
+	],
+	"endresult": "You arrive home to your dish ready in the oven and are able to eat as soon as you walk in the door."
+},
+{"name": "Wearable Technology",
+	"situation": "You want to keep up with how you’re doing on your fitness goals easily.",
+  "parts": [
+  {"title":"Wearer",
+  "description":"You’re running around all day, adding in some exercise and you want to see if you’re keeping up with your goals without all the guesswork."},
+  {"title":"Wearable",
+  "description":"It sits on your wrist, sensing your motion and your pulse, gauging how many calories you’ve burned."},
+  {"title":"Wifi",
+  "description":"It receives the fitness information and sends it to your phone."},
+  {"title":"Phone",
+  "description":"You can see on your phone all the different statistics on how you’re doing and plan accordingly."}
+],
+	"endresult": "You know how much you’ve worked out and can see how it lines up with your goals."
+}
+]

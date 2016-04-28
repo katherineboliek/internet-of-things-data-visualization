@@ -3,23 +3,41 @@
   <head>
       <title></title>
       <!-- angular -->
-      <script type="text/javascript" src="js/angular.js"></script>
+      <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
 
-      <!-- script -->
+      <!-- scripts -->
       <script type="text/javascript" src="js/app.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.16/d3.min.js" charset="utf-8"></script>
+      <script src="js/connected.js"></script>
+      <script src="js/global.js"></script>
 
       <!-- css -->
-      <link rel="stylesheet" href="css/bootstrap.css" />
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
       <link rel="stylesheet" href="css/styles.css" />
       <!--google fonts-->
 
       <!--font awesome-->
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-      <link href='/css/bootstrap.css' rel='stylesheet' type='text/css'>
-      <link href='/css/main.css' rel='stylesheet' type='text/css'>
+
   </head>
   <body ng-app="myApp">
-    <div class="container" ng-controller="NameController as nameCtrl">
+    <div class="container">
+      <h1>The Internet of Things: Past, Present and Future</h1>
+      <!--intro here-->
+      <div>intro</div>
+      <!--angular examples here-->
+      <div ng-controller="ExampleController as exCtrl">
+        <div ng-repeat="example in exCtrl.examples">
+          <h3>{{example.name}}</h3>
+        </div>
+      </div>
+      <!--history text here-->
+      <div>history</div>
+      <!--future text here-->
+      <div>future</div>
+      <!--future d3 graphics here-->
+      <div class="connected"></div>
+      <div class="globalmarket"></div>
     </div>
   </body>
 </html>
