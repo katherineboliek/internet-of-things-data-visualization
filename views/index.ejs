@@ -7,9 +7,8 @@
 
       <!-- scripts -->
       <script type="text/javascript" src="js/app.js"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.16/d3.min.js" charset="utf-8"></script>
-      <script src="js/connected.js"></script>
-      <script src="js/global.js"></script>
+      <script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+      <script src="http://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"></script>
 
       <!-- css -->
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
@@ -24,7 +23,10 @@
     <div class="container">
       <h1>The Internet of Things: Past, Present and Future</h1>
       <!--intro here-->
-      <div>intro</div>
+      <div>
+        <p>The internet is progressing past screens and moving into everything else. The Internet of Things is the next big step for our more and more connected world. Now instead of only being able to connect between devices like phones and computers, everything will be connected. From home appliances to sensors measuring crop growth to health monitors inside our bodies, everything is going to communicate with the rest of the system.</p>
+        <p>Here are a few examples of how this might work. Click through the tabs to see how the situation will work.</p>
+      </div>
       <!--angular examples here-->
       <div ng-controller="ExampleController as exCtrl">
         <div ng-repeat="example in exCtrl.examples">
@@ -57,12 +59,26 @@
         </div>
       </div>
       <!--history text here-->
-      <div>history</div>
+      <div>
+        <p>So how did we get to this place? The internet started as a way for scientists to share information with each other across connected computers. It was called ARPANET. The next big step came in 1989 when Tim Berners-Lee created the World Wide Web. He then created the first web browser. At first web pages were simple and informational. Overtime they have progressed to be more advanced as the programming languages they are built in have progressed.</p>
+        <p>The internet is still based on connected computers as it was at the beginning. How we use this connection is what is changing. What is considered a computer is also changing. With the Internet of Things, computers are moving into everyday items. These computers simple record information and are able to transmit them to the internet.</p>
+      </div>
       <!--future text here-->
-      <div>future</div>
+      <div>
+        <p>Today this takes the form of wearables and smart home appliances. In the future though, the internet of things will be ubiquitous. We won’t notice it because all the parts will be so in sync with each other. These charts show the expected number of connected devices and the expected amount of revenue.</p>
+      </div>
       <!--future d3 graphics here-->
-      <div class="connected"></div>
-      <div class="globalmarket"></div>
+      <div class="connected col-md-6">
+        <h2>Expected Number of Connected Devices, 2012-2020</h2>
+      </div>
+      <div class="global col-md-6">
+        <h2>Expected Market Share of IoT 2009-2019</h2>
+      </div>
+      <div>
+        <p>The growth is staggeringly rapid, but it makes sense as the world will become infinitely more connected and everything in it will be communicating with each other and with us. The internet of things is already here, but still has much more potential than it has currently reached.</p>
+      </div>
     </div>
+    <script src="js/connected.js"></script>
+    <script src="js/global.js"></script>
   </body>
 </html>
