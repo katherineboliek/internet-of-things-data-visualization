@@ -1,6 +1,6 @@
 //set margins
 	var margin = {top: 20, right: 80, bottom: 30, left: 50},
-	    width = 400 - margin.left - margin.right,
+	    width = 800 - margin.left - margin.right,
 	    height = 400 - margin.top - margin.bottom;
 
 //attach svg to page
@@ -24,8 +24,7 @@
 
 
 	var color = d3.scale.ordinal()
-  .domain(["All","18-29","30-49","50-64","65+"])
-  .range(["#b0d5c3", "#6F020E", "#de6344", "#ff8a6d", "#FFB191"]);
+  .range(["508991"]);
 
 //axes defined
 	var xAxis = d3.svg.axis()
@@ -40,7 +39,7 @@
 	var line = d3.svg.line()
 	    .interpolate("linear")
 	    .x(function(d) { return x(d.year); })
-	    .y(function(d) { return y(d.percentage); });
+	    .y(function(d) { return y(d.revenue); });
 
 //pull in data from file
 	d3.tsv("js/devices.txt", function(error, data) {
@@ -56,7 +55,7 @@
 	    return {
 	      name: name,
 	      values: data.map(function(d) {
-	        return {year: d.year, percentage: +d[name]};
+	        return {year: d.year, revenue: +d[name]};
 	      })
 	    };
 	  });
@@ -64,8 +63,8 @@
 	  x.domain(d3.extent(data, function(d) { return d.year; }));
 
 	  y.domain([
-	    d3.min(ages, function(c) { return d3.min(c.values, function(v) { return v.percentage; }); }),
-	    d3.max(ages, function(c) { return d3.max(c.values, function(v) { return v.percentage; }); })
+	    d3.min(ages, function(c) { return d3.min(c.values, function(v) { return v.revenue; }); }),
+	    d3.max(ages, function(c) { return d3.max(c.values, function(v) { return v.revenue; }); })
 	  ]);
 
 //adding x axis
@@ -83,7 +82,7 @@
 	      .attr("y", 6)
 	      .attr("dy", ".71em")
 	      .style("text-anchor", "end")
-	      .text("Percent on social media");
+	      .text("Market Revenue (in billions)");
 
 	  var age = svg1.selectAll(".age")
 	      .data(ages)
@@ -94,7 +93,7 @@
 	  age.append("path")
 	      .attr("class", "line")
 	      .attr("d", function(d) { return line(d.values); })
-	      .style("stroke", function(d) { return color(d.name); });
+	      .style("stroke", "#508991");
 
 //adding dot points and tooltip
 		age.selectAll(".age")
@@ -103,15 +102,13 @@
 			.attr("class", "dot")
 	    .attr("r", 5)
 	    .attr("cx", function(d) { return x(d.year); })
-	    .attr("cy", function(d) { return y(d.percentage); })
-			.style("stroke", "#50514F")
-			.style("fill-opacity", "0")
-			.style("stroke-width", "2px")
+	    .attr("cy", function(d) { return y(d.revenue); })
+			.style("fill", "#508991")
 			.on("mouseover", function(d) {
 	        tool.transition()
 	            .duration(200)
 	            .style("opacity", .9);
-	        tool.html(d.percentage + "%")
+	        tool.html("$" + d.revenue + " billion")
 						.style("left", d3.select(this).attr("cx") + "px")
 						.style("top", d3.select(this).attr("cy") + "px");
 	        })
@@ -120,12 +117,4 @@
 	            .duration(500)
 	            .style("opacity", 0);
 	    });
-
-	  age.append("text")
-	      .datum(function(d) { return {name: d.name, value: d.values[d.values.length - 1]}; })
-	      .attr("transform", function(d) { return "translate(" + x(d.value.year) + "," + y(d.value.percentage) + ")"; })
-	      .attr("x", 10)
-	      .attr("dy", ".35em")
-	      .text(function(d) { return d.name; })
-				.style("color", function(d) { return color(d.name); });
 	});

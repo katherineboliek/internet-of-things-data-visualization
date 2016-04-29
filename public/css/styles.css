@@ -91,11 +91,11 @@ footer a, footer a:hover {
 }
 
 .bar {
-  fill: steelblue;
+  fill: #508991;
 }
 
 .bar:hover {
-  fill: brown;
+  fill: #7A9CC6;
 }
 
 .axis {
@@ -136,4 +136,17 @@ footer a, footer a:hover {
   margin: -1px 0 0 0;
   top: 100%;
   left: 0;
+}
+
+html, body {
+height: 100%;
+}
+.wrapper {
+min-height: 100%;
+height: auto !important;
+height: 100%;
+margin: 0 auto -3em;
+}
+footer, .space {
+height: 3em;
 }

@@ -20,50 +20,53 @@
 
   </head>
   <body ng-app="myApp">
-    <header>
-      <div class="title col-lg-6 col-md-3"><a href="/">The Internet of Things</a></div>
-      <div class="col-lg-6 col-md-9">
-        <span class="navigation"><a href="/">Intro</a></span>
-        <span class="navigation"><a href="/examples">Examples</a></span>
-        <span class="navigation"><a href="/connected">Well Connected</a></span>
-        <span class="navigation"><a href="/global">Growing Globally</a></span>
-      </div>
-    </header>
-    <div class="container">
-      <p>Here are a few examples of how this might work. Click through the tabs to see how the situation will work. In each example there is an everyday situation, the different aspects of the Internet of Things solution, and the result that this new solution provides.</p>
-      <div ng-controller="ExampleController as exCtrl">
-        <div class="examp col-md-6" ng-repeat="example in exCtrl.examples">
-          <h3>{{example.name}}</h3>
-          <div ng-init="tab=1">
-            <ul class="nav nav-pills">
-              <li ng-class="{ active: tab === 1 }">
-                <a href ng-click="tab = 1">Situation</a>
-              </li>
-              <li ng-class="{ active: tab === 2 }">
-                <a href ng-click="tab = 2">Parts</a>
-              </li>
-              <li ng-class="{ active: tab === 3 }">
-                <a href ng-click="tab = 3">End Result</a>
-              </li>
-            </ul>
-            <div class="panel" ng-show="tab === 1">
-              <p>{{example.situation}}</p>
-            </div>
-            <div class="panel" ng-show="tab === 2">
-              <div ng-repeat="part in example.parts">
-                <h4>{{part.title}}</h4>
-                <p>{{part.description}}</p>
+    <div class="wrapper">
+      <header>
+        <div class="title col-lg-6 col-md-3"><a href="/">The Internet of Things</a></div>
+        <div class="col-lg-6 col-md-9">
+          <span class="navigation"><a href="/">Intro</a></span>
+          <span class="navigation"><a href="/examples">Examples</a></span>
+          <span class="navigation"><a href="/connected">Well Connected</a></span>
+          <span class="navigation"><a href="/global">Growing Globally</a></span>
+        </div>
+      </header>
+      <div class="container">
+        <p>Here are a few examples of how this might work. Click through the tabs to see how the situation will work. In each example there is an everyday situation, the different aspects of the Internet of Things solution, and the result that this new solution provides.</p>
+        <div ng-controller="ExampleController as exCtrl">
+          <div class="examp col-md-6" ng-repeat="example in exCtrl.examples">
+            <h3>{{example.name}}</h3>
+            <div ng-init="tab=1">
+              <ul class="nav nav-pills">
+                <li ng-class="{ active: tab === 1 }">
+                  <a href ng-click="tab = 1">Situation</a>
+                </li>
+                <li ng-class="{ active: tab === 2 }">
+                  <a href ng-click="tab = 2">Parts</a>
+                </li>
+                <li ng-class="{ active: tab === 3 }">
+                  <a href ng-click="tab = 3">End Result</a>
+                </li>
+              </ul>
+              <div class="panel" ng-show="tab === 1">
+                <p>{{example.situation}}</p>
               </div>
-            </div>
-            <div class="panel" ng-show="tab === 3">
-              <p>{{example.endresult}}</p>
+              <div class="panel" ng-show="tab === 2">
+                <div ng-repeat="part in example.parts">
+                  <h4>{{part.title}}</h4>
+                  <p>{{part.description}}</p>
+                </div>
+              </div>
+              <div class="panel" ng-show="tab === 3">
+                <p>{{example.endresult}}</p>
+              </div>
             </div>
           </div>
         </div>
+        <div class="col-xs-12">
+          <a class="btn pages" href="/connected">Next Page</a>
+        </div>
       </div>
-      <div class="col-xs-12">
-        <a class="btn pages" href="/connected">Next Page</a>
-      </div>
+      <div class="space"></div>
     </div>
     <footer>
     <p>Data from <a href="http://www.statista.com/topics/2637/internet-of-things/">Statista</a>.</p>

@@ -1,4 +1,4 @@
-year	All
+year	revenue
 2012	8.7
 2013	11.2
 2014	14.4
