@@ -29,16 +29,31 @@
       <div ng-controller="ExampleController as exCtrl">
         <div ng-repeat="example in exCtrl.examples">
           <h3>{{example.name}}</h3>
-          <p>{{example.situation}}</p>
-          <ul class="nav nav-pills">
-            <li ng-repeat="part in example.parts" ng-class="{ active: panel.isSelected({{part.id}})}">
-              <a href ng-click="panel.selectTab({{part.id}})">{{part.title}}</a>
-            </li>
-          </ul>
-          <div ng-repeat="part in example.parts" class="panel" ng-show="panel.isSelected(1)">
-            <p>{{part.description}}</p>
+          <div ng-init="tab=1">
+            <ul class="nav nav-pills">
+              <li ng-class="{ active: tab === 1 }">
+                <a href ng-click="tab = 1">Situation</a>
+              </li>
+              <li ng-class="{ active: tab === 2 }">
+                <a href ng-click="tab = 2">Parts</a>
+              </li>
+              <li ng-class="{ active: tab === 3 }">
+                <a href ng-click="tab = 3">End Result</a>
+              </li>
+            </ul>
+            <div class="panel" ng-show="tab === 1">
+              <p>{{example.situation}}</p>
+            </div>
+            <div class="panel" ng-show="tab === 2">
+              <div ng-repeat="part in example.parts">
+                <h4>{{part.title}}</h4>
+                <p>{{part.description}}</p>
+              </div>
+            </div>
+            <div class="panel" ng-show="tab === 3">
+              <p>{{example.endresult}}</p>
+            </div>
           </div>
-          <p>{{example.endresult}}</p>
         </div>
       </div>
       <!--history text here-->
