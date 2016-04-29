@@ -1,7 +1,69 @@
+@import url(https://fonts.googleapis.com/css?family=Ubuntu:400,700);
+
 body {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
 }
 
+a {
+  color: #508991;
+}
+
+header {
+  padding: 15px;
+  min-height: 50px;
+  background-color: #7A9CC6;
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.navigation, .navigation a, .navigation a:hover {
+  text-align: center;
+  padding: 10px 10px 0 10px;
+  color: #EFEFEF;
+}
+
+.title a {
+  text-align: left;
+  color: #EFEFEF;
+}
+
+.pages {
+  border: 1px solid #508991;
+}
+
+footer {
+  margin-top: 20px;
+  text-align: center;
+  padding: 10px 0 5px 0;
+  background-color: #7A9CC6;
+  color: #EFEFEF;
+}
+
+footer a, footer a:hover {
+  color: #EFEFEF;
+}
+/*examples page styles*/
+.examp {
+  border-radius: 7px;
+  padding: 10px 20px 10px 20px;
+  margin: 10px 0 20px 0;
+}
+
+.examp a {
+  color: #508991;
+}
+
+.nav-pills>li.active>a, .nav-pills>li.active>a:focus, .nav-pills>li.active>a:hover {
+  color: #EFEFEF;
+  background-color: #508991;
+  border-radius: 2px;
+}
+
+/*connected page styles*/
 .connected {
   width: 50%;
   height: 500px;
@@ -21,6 +83,7 @@ body {
   stroke-width: 1.5px;
 }
 
+/*global page styles*/
 .global {
   width: 50%;
   height: 500px;

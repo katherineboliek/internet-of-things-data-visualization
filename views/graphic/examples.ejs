@@ -19,7 +19,7 @@
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 
   </head>
-  <body>
+  <body ng-app="myApp">
     <header>
       <div class="title col-lg-6 col-md-3"><a href="/">The Internet of Things</a></div>
       <div class="col-lg-6 col-md-9">
@@ -30,11 +30,39 @@
       </div>
     </header>
     <div class="container">
-      <div>
-        <p>As you can see here, the growth is staggeringly rapid, but it makes sense as the world will become infinitely more connected and everything in it will be communicating with each other and with us. The internet of things is already here, but still has much more potential than it has currently reached.</p>
+      <p>Here are a few examples of how this might work. Click through the tabs to see how the situation will work. In each example there is an everyday situation, the different aspects of the Internet of Things solution, and the result that this new solution provides.</p>
+      <div ng-controller="ExampleController as exCtrl">
+        <div class="examp col-md-6" ng-repeat="example in exCtrl.examples">
+          <h3>{{example.name}}</h3>
+          <div ng-init="tab=1">
+            <ul class="nav nav-pills">
+              <li ng-class="{ active: tab === 1 }">
+                <a href ng-click="tab = 1">Situation</a>
+              </li>
+              <li ng-class="{ active: tab === 2 }">
+                <a href ng-click="tab = 2">Parts</a>
+              </li>
+              <li ng-class="{ active: tab === 3 }">
+                <a href ng-click="tab = 3">End Result</a>
+              </li>
+            </ul>
+            <div class="panel" ng-show="tab === 1">
+              <p>{{example.situation}}</p>
+            </div>
+            <div class="panel" ng-show="tab === 2">
+              <div ng-repeat="part in example.parts">
+                <h4>{{part.title}}</h4>
+                <p>{{part.description}}</p>
+              </div>
+            </div>
+            <div class="panel" ng-show="tab === 3">
+              <p>{{example.endresult}}</p>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="global">
-        <h2>Expected Number of Connected Devices, 2012-2020</h2>
+      <div class="col-xs-12">
+        <a class="btn pages" href="/connected">Next Page</a>
       </div>
     </div>
     <footer>

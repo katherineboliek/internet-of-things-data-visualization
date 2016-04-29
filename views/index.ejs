@@ -20,51 +20,31 @@
 
   </head>
   <body ng-app="myApp">
+    <header>
+      <div class="title col-lg-6 col-md-3"><a href="/">The Internet of Things</a></div>
+      <div class="col-lg-6 col-md-9">
+        <span class="navigation"><a href="/">Intro</a></span>
+        <span class="navigation"><a href="/examples">Examples</a></span>
+        <span class="navigation"><a href="/connected">Well Connected</a></span>
+        <span class="navigation"><a href="/global">Growing Globally</a></span>
+      </div>
+    </header>
     <div class="container">
       <h1>The Internet of Things: Past, Present and Future</h1>
       <!--intro here-->
       <div>
         <p>The internet is progressing past screens and moving into everything else. The Internet of Things is the next big step for our more and more connected world. Now instead of only being able to connect between devices like phones and computers, everything will be connected. From home appliances to sensors measuring crop growth to health monitors inside our bodies, everything is going to communicate with the rest of the system.</p>
-        <p>Here are a few examples of how this might work. Click through the tabs to see how the situation will work.</p>
-      </div>
-      <!--angular examples here-->
-      <div ng-controller="ExampleController as exCtrl">
-        <div ng-repeat="example in exCtrl.examples">
-          <h3>{{example.name}}</h3>
-          <div ng-init="tab=1">
-            <ul class="nav nav-pills">
-              <li ng-class="{ active: tab === 1 }">
-                <a href ng-click="tab = 1">Situation</a>
-              </li>
-              <li ng-class="{ active: tab === 2 }">
-                <a href ng-click="tab = 2">Parts</a>
-              </li>
-              <li ng-class="{ active: tab === 3 }">
-                <a href ng-click="tab = 3">End Result</a>
-              </li>
-            </ul>
-            <div class="panel" ng-show="tab === 1">
-              <p>{{example.situation}}</p>
-            </div>
-            <div class="panel" ng-show="tab === 2">
-              <div ng-repeat="part in example.parts">
-                <h4>{{part.title}}</h4>
-                <p>{{part.description}}</p>
-              </div>
-            </div>
-            <div class="panel" ng-show="tab === 3">
-              <p>{{example.endresult}}</p>
-            </div>
-          </div>
-        </div>
       </div>
       <!--history text here-->
       <div>
         <p>So how did we get to this place? The internet started as a way for scientists to share information with each other across connected computers. It was called ARPANET. The next big step came in 1989 when Tim Berners-Lee created the World Wide Web. He then created the first web browser. At first web pages were simple and informational. Overtime they have progressed to be more advanced as the programming languages they are built in have progressed.</p>
         <p>The internet is still based on connected computers as it was at the beginning. How we use this connection is what is changing. What is considered a computer is also changing. With the Internet of Things, computers are moving into everyday items. These computers simple record information and are able to transmit them to the internet.</p>
-        <p>Visit the next page to see where this is all headed.</p>
-        <a class="btn" href="/connected">Next Page</a>
+        <p>Visit the next page for some examples of how this all works today.</p>
       </div>
+      <a class="btn pages" href="/examples">Next Page</a>
     </div>
+    <footer>
+    <p>Data from <a href="http://www.statista.com/topics/2637/internet-of-things/">Statista</a>.</p>
+    </footer>
   </body>
 </html>
