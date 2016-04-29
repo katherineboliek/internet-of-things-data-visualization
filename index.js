@@ -18,6 +18,14 @@ app.get('/', function(req,res){
    res.render('index', data);
   }); //list page
 
+app.get('/connected', function(req,res){
+   res.render('graphic/connected', data);
+  });
+
+app.get('/global', function(req,res){
+   res.render('graphic/global', data);
+  });
+
 app.listen(8080, function(){
     console.log("Listening on port 8080...");
 });
